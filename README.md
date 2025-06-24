@@ -1,70 +1,251 @@
-# Getting Started with Create React App
+# XR & AR Development Quiz App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive interactive assessment platform for Extended Reality (XR), Augmented Reality (AR), and Unity development. This application provides engaging quizzes to test knowledge of XR fundamentals, AR development concepts, and Unity AR Foundation implementation.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- **Three Comprehensive Quiz Modules**:
+  - XR Fundamentals (8 questions, 7 minutes)
+  - AR Development (9 questions, 9 minutes)
+  - Unity AR Development (10 questions, 9 minutes)
 
-### `npm start`
+- **Enhanced User Experience**:
+  - Mobile-responsive design with modern UI
+  - Real-time countdown timer with visual warnings
+  - Large, prominent question numbers for better visibility
+  - Smooth animations and transitions
+  - Progress tracking with visual indicators
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Instant Assessment**:
+  - Immediate scoring and feedback
+  - Detailed answer review with explanations
+  - Performance analytics and recommendations
+  - Unlimited retake attempts
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Accessibility Features**:
+  - Keyboard navigation support
+  - High contrast mode compatibility
+  - Screen reader friendly
+  - Reduced motion support
 
-### `npm test`
+## 🛠️ Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Frontend**: React 18.2.0
+- **UI Framework**: Chakra UI 2.8.2
+- **Icons**: Lucide React
+- **Animations**: Framer Motion
+- **Styling**: CSS3 with modern features
+- **Build Tool**: Create React App
 
-### `npm run build`
+## 📋 Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Before running this application, make sure you have the following installed:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js (version 14 or higher)
+- npm (version 6 or higher)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ⚡ Quick Start
 
-### `npm run eject`
+### 1. Clone the Repository
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+git clone <repository-url>
+cd xr-ar-quiz-app
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2. Install Dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 3. Start Development Server
 
-## Learn More
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The application will open in your browser at `http://localhost:3000`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 4. Build for Production
 
-### Code Splitting
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🎯 Quiz Access
 
-### Analyzing the Bundle Size
+Quizzes are accessed through specific URL parameters for controlled access:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+| Quiz Module | URL |
+|-------------|-----|
+| XR Fundamentals | `http://localhost:3000/?quiz=xr` |
+| AR Development | `http://localhost:3000/?quiz=ar` |
+| Unity AR Development | `http://localhost:3000/?quiz=unity` |
 
-### Making a Progressive Web App
+> **Note**: The homepage serves as a landing page only. Quizzes are not directly accessible from the homepage and require the specific URLs above.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📁 Project Structure
 
-### Advanced Configuration
+```
+xr-ar-quiz-app/
+├── public/
+│   ├── index.html
+│   ├── manifest.json
+│   └── robots.txt
+├── src/
+│   ├── components/
+│   │   ├── HomePage.js          # Landing page component
+│   │   ├── QuizPage.js          # Quiz interface component
+│   │   └── ResultsPage.js       # Results and review component
+│   ├── data/
+│   │   └── QuizData.js          # Quiz questions and configuration
+│   ├── App.js                   # Main application component
+│   ├── App.css                  # Application-specific styles
+│   ├── index.js                 # Application entry point
+│   ├── index.css                # Global styles
+│   └── reportWebVitals.js       # Performance monitoring
+├── package.json
+└── README.md
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🎨 Customization
 
-### Deployment
+### Adding New Quizzes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. **Update QuizData.js**: Add new quiz object with the following structure:
+```javascript
+newQuiz: {
+  title: "Quiz Title",
+  duration: 600, // seconds
+  color: "bg-color-class",
+  description: "Quiz description",
+  questions: [
+    {
+      question: "Question text",
+      options: ["Option A", "Option B", "Option C", "Option D"],
+      correct: 1 // Index of correct answer (0-based)
+    }
+    // ... more questions
+  ]
+}
+```
 
-### `npm run build` fails to minify
+2. **Update App.js**: Add the new quiz key to the URL parameter handling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Modifying Styles
+
+- **Global styles**: Edit `src/index.css`
+- **Component styles**: Edit `src/App.css`
+- **Chakra UI theme**: Modify theme in `src/index.js`
+
+### Changing Quiz Access URLs
+
+Modify the URL parameter handling in `App.js`:
+```javascript
+const urlParams = new URLSearchParams(window.location.search);
+const quizParam = urlParams.get('quiz'); // Change 'quiz' to your preferred parameter
+```
+
+## 🧪 Testing
+
+Run the test suite:
+```bash
+npm test
+```
+
+Run tests with coverage:
+```bash
+npm test -- --coverage
+```
+
+## 📱 Mobile Responsiveness
+
+The application is fully responsive and optimized for:
+- Desktop (1024px and above)
+- Tablet (768px - 1023px)
+- Mobile (320px - 767px)
+
+Key mobile optimizations:
+- Touch-friendly button sizes (minimum 44px)
+- Responsive typography
+- Optimized layouts for smaller screens
+- Swipe-friendly interfaces
+
+## 🎓 Educational Context
+
+This quiz application is based on the workshop presentation "Introduction to Extended Reality (XR) and Building AR Applications with Unity" from the Digital Horizon workshop series. The content covers:
+
+- **XR Fundamentals**: Basic concepts, terminology, and industry applications
+- **AR Development**: Technical implementation, SLAM technology, and platform considerations
+- **Unity AR Foundation**: Cross-platform development, session management, and best practices
+
+## 🔧 Available Scripts
+
+| Script | Description |
+|--------|-------------|
+| `npm start` | Runs the app in development mode |
+| `npm test` | Launches the test runner |
+| `npm run build` | Builds the app for production |
+| `npm run eject` | Ejects from Create React App (one-way operation) |
+
+## 🌐 Browser Support
+
+- Chrome (recommended)
+- Firefox
+- Safari
+- Edge
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **Port 3000 already in use**:
+   ```bash
+   npx kill-port 3000
+   npm start
+   ```
+
+2. **Node modules issues**:
+   ```bash
+   rm -rf node_modules package-lock.json
+   npm install
+   ```
+
+3. **Build errors**:
+   ```bash
+   npm run build
+   # Check console for specific error messages
+   ```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### Development Guidelines
+
+- Follow React functional component patterns
+- Use Chakra UI components for consistency
+- Maintain mobile-first responsive design
+- Add proper accessibility attributes
+- Test on multiple screen sizes
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👨‍💻 Author
+
+**Prakash Aryan**
+- Workshop: "Introduction to Extended Reality (XR) and Building AR Applications with Unity"
+- Digital Horizon Workshop Series
+- June 24, 2025
+
+## 🙏 Acknowledgments
+
+- Digital Horizon Workshop organizers
+- React and Chakra UI communities
