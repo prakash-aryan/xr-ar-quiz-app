@@ -79,9 +79,9 @@ Quizzes are accessed through specific URL parameters for controlled access:
 
 | Quiz Module | URL |
 |-------------|-----|
-| XR Fundamentals | `http://localhost:3000/?quiz=xr` |
-| AR Development | `http://localhost:3000/?quiz=ar` |
-| Unity AR Development | `http://localhost:3000/?quiz=unity` |
+| XR Fundamentals | `https://xr-ar-quiz-app.pages.dev/?quiz=xr` |
+| AR Development | `https://xr-ar-quiz-app.pages.dev/?quiz=ar` |
+| Unity AR Development | `https://xr-ar-quiz-app.pages.dev/?quiz=unity` |
 
 > **Note**: The homepage serves as a landing page only. Quizzes are not directly accessible from the homepage and require the specific URLs above.
 
