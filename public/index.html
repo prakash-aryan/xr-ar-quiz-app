@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="description" content="Test your knowledge of Extended Reality (XR), Augmented Reality (AR), and Unity development with comprehensive quizzes based on industry fundamentals." />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="XR, AR, VR, MR, Extended Reality, Augmented Reality, Virtual Reality, Mixed Reality, Unity, AR Foundation, Quiz, Learning, Education" />
+    <meta name="author" content="Prakash Aryan, University of Bern" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="XR & AR Development Quiz App" />
+    <meta property="og:description" content="Test your knowledge of Extended Reality, Augmented Reality, and Unity development with comprehensive interactive quizzes." />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="XR & AR Development Quiz App" />
+    <meta name="twitter:description" content="Interactive quizzes for Extended Reality and AR development with Unity" />
+    
+    <title>XR & AR Development Quiz | University of Bern</title>
+    
+    <style>
+      /* Loading screen styles */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        z-index: 9999;
+      }
+      
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-top: 4px solid white;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 20px;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      .loading-text {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      
+      .loading-subtitle {
+        font-size: 14px;
+        opacity: 0.8;
+      }
+      
+      /* Hide loading screen when React app loads */
+      #root:not(:empty) + .loading-screen {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    
+    <!-- Loading screen displayed until React app loads -->
+    <div class="loading-screen">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Loading XR Quiz App</div>
+      <div class="loading-subtitle">Preparing your learning experience...</div>
+    </div>
+  </body>
+</html>
